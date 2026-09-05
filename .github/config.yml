@@ -1,0 +1,12 @@
+---
+
+rtd:
+  project: multidict
+
+
+chronographer:
+  exclude:
+    bots:
+    - dependabot-preview
+
+...

@@ -1,0 +1,41 @@
+---
+
+codecov:
+  notify:
+    after_n_builds: 1  # The number of test matrix+lint jobs uploading coverage
+    wait_for_ci: false
+
+  require_ci_to_pass: false
+
+  token: >-  # notsecret  # repo-scoped, upload-only, stability in fork PRs
+    796e466d-bf08-4b98-8d5b-0e9c442aef06
+
+comment:
+  require_changes: true
+
+coverage:
+  range: 100..100
+  status:
+    patch:
+      runtime:
+        target: 95%
+        flags:
+        - pytest
+    project:
+      lib:
+        flags:
+        - pytest
+        paths:
+        - multidict/
+        target: 95%
+      tests:
+        flags:
+        - pytest
+        paths:
+        - tests/
+        target: 100%
+
+github_checks:
+  annotations: false
+
+...
